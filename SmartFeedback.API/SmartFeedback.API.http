@@ -1,0 +1,6 @@
+@SmartFeedback.API_HostAddress = http://localhost:5237
+
+GET {{SmartFeedback.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
