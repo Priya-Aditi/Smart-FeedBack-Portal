@@ -1,6 +1,5 @@
 /* Background and centering */
-.register-bg {
-  /* background: linear-gradient(135deg, #e3eafe 0%, #edf6fd 100%); */
+/* .register-bg {
   background: url("../assets/background.svg") no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
@@ -67,7 +66,7 @@
 }
 
 .input {
-  /* width: 100%; */
+
   padding: 12px 13px;
   border-radius: 8px;
   border: 1.2px solid #e3e8f8;
@@ -127,4 +126,124 @@
 }
 .footer-link:hover {
   color: #374fc7;
+} */
+
+/* Split background layout like login */
+.register-bg {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+
+/* Left side with image */
+.register-bg::before {
+  content: "";
+  flex: 2;
+  background: url("../assets/background.svg") no-repeat center center;
+  background-size: cover;
+}
+
+/* Right side with form */
+.register-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 90px;
+  background: #ffffff;
+}
+
+/* Header */
+.register-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.register-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.register-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+.register-desc {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Form styling */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input fields (matches login) */
+.input {
+  padding: 14px 18px;
+  background-color: #efefef;
+  border-radius: 50px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+  background-color: #ffffff;
+  border: 1px solid #ff6600;
+}
+
+/* Register Button (same style as login) */
+.register-btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #e65c00;
+}
+
+/* Error & Success messages */
+.register-error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-success {
+  color: green;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Footer */
+.register-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-link {
+  color: #ff6600;
+  margin-left: 5px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
 }
